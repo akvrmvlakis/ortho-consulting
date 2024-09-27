@@ -1,5 +1,5 @@
 import type { Metadata } from "next"
-import "./globals.css"
+import "../globals.css"
 import { Outfit } from "next/font/google"
 import { NextIntlClientProvider } from "next-intl"
 import { getMessages } from "next-intl/server" // Ensure this function is correctly implemented

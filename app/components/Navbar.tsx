@@ -164,7 +164,7 @@ export default function Navbar(): JSX.Element {
   )
 
   return (
-    <div className="card">
+    <div className="card fixed top-0 left-0 right-0 z-50 w-full">
       <Menubar
         model={items}
         end={endTemplate}
