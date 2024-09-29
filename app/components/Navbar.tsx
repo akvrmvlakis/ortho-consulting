@@ -15,10 +15,10 @@ export default function Navbar(): JSX.Element {
   const t = useTranslations("navbar")
 
   // Function to change the locale
-  const changeLocale = (newLocale: string) => {
-    setCurrentLocale(newLocale)
-    router.push(`/${newLocale}${pathname.slice(3)}`) // Navigate to the new locale URL
-  }
+  // const changeLocale = (newLocale: string) => {
+  //   setCurrentLocale(newLocale)
+  //   router.push(`/${newLocale}${pathname.slice(3)}`) // Navigate to the new locale URL
+  // }
 
   useEffect(() => {
     const localeFromPath = pathname.split("/")[1] // Get the locale from the path

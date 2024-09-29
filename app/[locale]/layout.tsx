@@ -20,22 +20,19 @@ export const metadata: Metadata = {
 }
 
 // Generate static params for locales
-export function generateStaticParams() {
-  return routing.locales.map((locale) => ({ locale }))
-}
+type Locale = "en" | "de" // Add other locales if needed
 
 export default async function LocaleLayout({
   children,
   params,
 }: {
   children: React.ReactNode
-  params: { locale: any } // Ensure this is correctly typed
+  params: { locale: Locale } // Specify the locale type
 }) {
-  const { locale } = params // Destructure locale from params
+  const { locale } = params
   unstable_setRequestLocale(locale)
 
-  // Fetch messages for the current locale
-  const messages = await getMessages(locale) // Ensure getMessages accepts a locale string
+  const messages = await getMessages(locale)
 
   return (
     <html lang={locale}>
