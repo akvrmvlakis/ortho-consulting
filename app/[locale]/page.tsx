@@ -1,7 +1,3 @@
-import Image from "next/image"
-
-// import whatever from "../../public/images"
-
 export default function Home() {
   return (
     <>

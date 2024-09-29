@@ -6,7 +6,6 @@ import { useEffect, useState } from "react"
 import { Menubar } from "primereact/menubar"
 import LanguageSwitcher from "./LanguageSwitcher" // Import the LanguageSwitcher
 import { usePathname } from "next/navigation" // Import usePathname
-import Link from "next/link"
 
 export default function Navbar(): JSX.Element {
   const router = useRouter()
