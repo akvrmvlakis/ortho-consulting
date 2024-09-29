@@ -167,7 +167,7 @@ export default function Navbar(): JSX.Element {
       <Menubar
         model={items}
         end={endTemplate}
-        className="rounded-none w-full text-sm"
+        className="rounded-none w-full text-base font-semibold"
       />
     </div>
   )
