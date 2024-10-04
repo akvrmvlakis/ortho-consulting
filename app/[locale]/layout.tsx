@@ -2,15 +2,18 @@ import type { Metadata } from "next"
 import "../globals.css"
 import { Outfit } from "next/font/google"
 import { NextIntlClientProvider } from "next-intl"
-import { getMessages } from "next-intl/server" // Ensure this function is correctly implemented
+import { getMessages } from "next-intl/server"
 import { routing } from "@/i18n/routing"
 import { unstable_setRequestLocale } from "next-intl/server"
 
 // PrimeReact CSS imports
-import "primereact/resources/themes/saga-blue/theme.css" // Theme (or any other theme you're using)
+import "primereact/resources/themes/saga-blue/theme.css"
 
 // Components
 import Navbar from "../components/Navbar"
+
+// Define the type for Locale
+type Locale = (typeof routing.locales)[number]
 
 const outfit = Outfit({ subsets: ["latin"] })
 
@@ -29,13 +32,17 @@ export default async function LocaleLayout({
   params,
 }: {
   children: React.ReactNode
-  params: { locale: any } // Ensure this is correctly typed
+  params: { locale: Locale } // Ensure locale is correctly typed
 }) {
-  const { locale } = params // Destructure locale from params
-  unstable_setRequestLocale(locale)
+  const { locale } = params
+
+  console.log("Current Locale:", locale) // Debugging line
+
+  // Pass the locale as a string to unstable_setRequestLocale
+  unstable_setRequestLocale(locale) // Pass locale directly as a string
 
   // Fetch messages for the current locale
-  const messages = await getMessages(locale) // Ensure getMessages accepts a locale string
+  const messages = await getMessages(locale) // Ensure this fetches messages correctly
 
   return (
     <html lang={locale}>
