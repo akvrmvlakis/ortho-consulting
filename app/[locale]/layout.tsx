@@ -42,7 +42,7 @@ export default async function LocaleLayout({
   unstable_setRequestLocale(locale) // Pass locale directly as a string
 
   // Fetch messages for the current locale
-  const messages = await getMessages(locale) // Ensure this fetches messages correctly
+  const messages = await getMessages({ locale })
 
   return (
     <html lang={locale}>
