@@ -2,34 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
-.border-b.intuneAccordion button {
-  text-decoration: none;
-  padding-top: 8px !important;
-  padding-bottom: 8px !important;
-}
-
-.border-b.intuneAccordion svg {
-  display: none;
-}
-
-.intuneAccordion {
-  border: none;
-}
-
-@media (max-width: 640px) {
-  .mobile-break {
-    display: block;
-  }
-}
-
-@media (max-width: 767px) {
-  .intune-break {
-    display: block;
-  }
-}
-
-@media (min-width: 768px) {
-  .tablet-break {
-    display: block;
+@media screen and (max-width: 640px) {
+  ul.p-menubar-root-list {
+    min-height: 100vh;
   }
 }
